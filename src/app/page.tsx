@@ -22,7 +22,7 @@ export default async function HomePage() {
             href="/cars"
             className="inline-block bg-white text-indigo-600 font-semibold px-8 py-3.5 rounded-xl hover:bg-indigo-50 transition-colors"
           >
-            Browse all fleet →
+            Book now →
           </Link>
         </div>
       </section>
