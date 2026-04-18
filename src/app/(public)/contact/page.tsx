@@ -8,7 +8,7 @@ export default function ContactPage() {
           <h2 className="text-xl font-semibold">Customer Support</h2>
           <p className="text-gray-500">Email: 
           <a 
-          href="mailto:support@zenamotorhires.com?subject=Inquiry regarding Zena Motor Hires&body=Hello Zena Team, I would like to ask about..." 
+          href="mailto:oloochino001@gmail.com?subject=Inquiry regarding Zena Motor Hires&body=Hello Zena Team, I would like to ask about..." 
           className="text-indigo-600 hover:underline"
         >
         support@zenamotorhires.com
@@ -19,7 +19,7 @@ export default function ContactPage() {
           <h2 className="text-xl font-semibold">WhatsApp Support</h2>
           <p className="text-gray-500">Chat with us on WhatsApp:</p>
           <a 
-            href="https://wa.me/254755112760?text=Hello%20Zena%20Motor%20Hires!" 
+            href="https://wa.me/254714686267?text=Hello%20Zena%20Motor%20Hires!" 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-green-600 px-4 py-1 rounded-lg text-white"

@@ -34,9 +34,9 @@ interface Props {
           </p>
         </div>
 
-        <div className="flex gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           {/* Sidebar filter */}
-          <aside className="w-64 shrink-0">
+          <aside className="w-full md:w-64 shrink-0">
             <Suspense>
               <CarsFilter />
             </Suspense>
@@ -45,12 +45,13 @@ interface Props {
           {/* Grid */}
           <main className="flex-1">
             {cars.length === 0 ? (
-              <div className="text-center py-20 text-gray-400">
+              <div className="text-center py-10 md:py-20 text-gray-400">
                 <p className="text-lg">No vehicles match your filters.</p>
                 <p className="text-sm mt-1">Try adjusting your search.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              /* Grid: 1 column on tiny phones, 2 on tablets, 3 on desktop */
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                 {cars.map((car) => (
                   <CarCard key={car.id} car={car} />
                 ))}
