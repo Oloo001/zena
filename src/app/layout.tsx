@@ -5,6 +5,7 @@ import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import SessionProvider from "@/components/ui/SessionProvider";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/next";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -33,6 +34,7 @@ export default function RootLayout({
           <Toaster position="top-right" />
           {children}
           <Footer />
+          <Analytics/>
         </SessionProvider>
       </body>
     </html>
