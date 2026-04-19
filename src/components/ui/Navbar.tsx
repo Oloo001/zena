@@ -37,8 +37,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           
           {/* Logo */}
-          <Link href="/" className="text-xl font-bold text-indigo-600 tracking-tight">
-            <i>ZENA MOTOR HIRES</i>
+          <Link href="/" className="text-2xl font-black text-indigo-600 tracking-tight">
+            <i>ZENA MOTORS</i>
           </Link>
 
           {/* Desktop Nav links */}
