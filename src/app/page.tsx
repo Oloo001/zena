@@ -12,7 +12,7 @@ export default async function HomePage() {
       <section className="bg-indigo-600 text-white py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl font-bold mb-4 tracking-tight">
-            Kwa hakika, huu ndio uhuru wa usafiri. Test our wheeled beasts today.
+            True Journey Feeling With Us
           </h1>
           <p className="text-indigo-200 text-lg mb-10 max-w-xl mx-auto">
             Premium car hire across Kenya. Instant booking, transparent pricing,

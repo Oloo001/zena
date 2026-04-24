@@ -8,7 +8,7 @@ export default function MobileAdminHeader() {
 
   return (
     <div className="flex items-center justify-between px-4 h-16">
-      <span className="font-bold text-indigo-600 italic">ZENA ADMIN</span>
+      <span className="font-bold text-indigo-600 italic">CITY ADMIN</span>
       
       <button 
         onClick={() => setIsOpen(!isOpen)}

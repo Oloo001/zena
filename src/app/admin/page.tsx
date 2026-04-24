@@ -25,7 +25,7 @@ export default async function AdminOverviewPage() {
       <div className="flex flex-col gap-1">
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">Overview</h1>
         <p className="text-sm text-gray-500">
-          Welcome back <b>admin</b>. Here's Zena at a glance.
+          Welcome back <b>admin</b>. Here's your dashboard at a glance.
         </p>
       </div>
 

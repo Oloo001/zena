@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
+import { useTheme } from "next-themes"; // New import
+import { useState, useEffect } from "react"; // New import
 import { 
   LayoutDashboard, 
   Car, 
@@ -10,7 +12,9 @@ import {
   Users, 
   CreditCard, 
   ExternalLink, 
-  LogOut 
+  LogOut, 
+  Sun, // New icon
+  Moon // New icon
 } from "lucide-react"; // Using Lucide for a professional look
 
 // Define the interface for props to fix the 'underlined' error
@@ -28,6 +32,13 @@ const links = [
 
 export default function AdminSidebar({ onNavItemClick }: AdminSidebarProps) {
   const pathname = usePathname();
+  const { theme, setTheme } = useTheme(); // New hook for theme management
+  const [mounted, setMounted] = useState(false); // State to check if component is mounted
+
+  // Ensure component is mounted before showing theme icons to prevent UI mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   /**
    * Helper to handle clicks on navigation items.
@@ -40,12 +51,12 @@ export default function AdminSidebar({ onNavItemClick }: AdminSidebarProps) {
   };
 return (
     // 'h-full' instead of 'min-h-screen' so it behaves inside the Mobile Drawer properly
-    <aside className="w-full md:w-64 flex flex-col h-full bg-white border-r border-gray-100">
+    <aside className="w-full md:w-64 flex flex-col h-full bg-white dark:bg-[#0a0a0a] border-r border-gray-100 dark:border-gray-800 transition-colors duration-300">
       
       {/* Branding Header - Hidden on mobile if you're using the MobileAdminHeader */}
       <div className="hidden md:block px-6 py-8">
         <Link href="/" className="text-2xl font-black text-indigo-600 tracking-tight">
-          ZENA
+          CITY
         </Link>
         <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold mt-1">
           Admin Control
@@ -81,7 +92,26 @@ return (
       </nav>
 
       {/* Bottom Actions */}
-      <div className="px-4 py-6 border-t border-gray-50 space-y-1">
+        <div className="px-4 py-6 border-t border-gray-50 dark:border-gray-900 space-y-1">
+        {/* --- Theme Toggle Feature --- */}
+        {mounted && (
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+          >
+            {theme === "dark" ? (
+              <>
+                <Sun size={18} />
+                <span>Light Mode</span>
+              </>
+            ) : (
+              <>
+                <Moon size={18} />
+                <span>Dark Mode</span>
+              </>
+            )}
+          </button>
+        )}
         <Link
           href="/"
           onClick={handleLinkClick}
