@@ -15,7 +15,7 @@ const prisma = new PrismaClient({ adapter });
 
 
 async function main() {
-  const email = "admin@zena.co.ke";
+  const email = "admin@cityhire.co.ke";
   const password = "Admin1234";
 
   const existing = await prisma.user.findUnique({ where: { email } });
@@ -33,7 +33,7 @@ async function main() {
 
   await prisma.user.create({
     data: {
-      name: "Zena Admin",
+      name: "City Admin",
       email,
       password: hashed,
       role: "ADMIN",

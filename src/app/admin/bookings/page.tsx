@@ -47,6 +47,8 @@ export default async function AdminBookingsPage({ searchParams }: Props) {
 
       {/* Table */}
       <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div className="overflow-x-auto">
+        <div className="min-w-[900px]">
         <div className="grid grid-cols-12 gap-3 px-5 py-3 bg-gray-50 border-b border-gray-100 text-xs font-medium text-gray-500 uppercase tracking-wide">
           <div className="col-span-3">Customer</div>
           <div className="col-span-3">Vehicle</div>
@@ -65,6 +67,8 @@ export default async function AdminBookingsPage({ searchParams }: Props) {
               <AdminBookingRow key={booking.id} booking={booking} />
             ))
           )}
+        </div>
+        </div>
         </div>
       </div>
     </div>

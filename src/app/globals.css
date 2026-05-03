@@ -3,25 +3,123 @@
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Expose CSS vars as Tailwind tokens */
+  --color-surface:       var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-card:          var(--card-bg);
+  --color-border-base:   var(--border);
+  --color-text-base:     var(--text-primary);
+  --color-text-sub:      var(--text-secondary);
+  --color-text-muted:    var(--text-muted);
+  --color-input-bg:      var(--input-bg);
+  --color-input-border:  var(--input-border);
 }
 
-/* Tailwind v4 needs to know that the "dark" variant 
-  is triggered by the .dark class on a parent (html)
-*/
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  /* Base */
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Surfaces */
+  --surface:          #ffffff;
+  --surface-raised:   #ffffff;
+  --surface-muted:    #f9fafb;
+  --surface-subtle:   #f3f4f6;
+
+  /* Text */
+  --text-primary:     #111827;
+  --text-secondary:   #6b7280;
+  --text-muted:       #9ca3af;
+  --text-placeholder: #d1d5db;
+
+  /* Borders */
+  --border:           #e5e7eb;
+  --border-strong:    #d1d5db;
+
+  /* Input */
+  --input-bg:         #ffffff;
+  --input-border:     #e5e7eb;
+  --input-text:       #111827;
+
+  /* Card */
+  --card-bg:          #ffffff;
+  --card-border:      #f3f4f6;
 }
 
-/* This is what next-themes toggles */
 .dark {
+  /* Base */
   --background: #0a0a0a;
   --foreground: #ededed;
+
+  /* Surfaces */
+  --surface:          #0a0a0a;
+  --surface-raised:   #171717;
+  --surface-muted:    #111111;
+  --surface-subtle:   #1a1a1a;
+
+  /* Text */
+  --text-primary:     #f5f5f5;
+  --text-secondary:   #a3a3a3;
+  --text-muted:       #737373;
+  --text-placeholder: #525252;
+
+  /* Borders */
+  --border:           #262626;
+  --border-strong:    #404040;
+
+  /* Input */
+  --input-bg:         #171717;
+  --input-border:     #262626;
+  --input-text:       #f5f5f5;
+
+  /* Card */
+  --card-bg:          #171717;
+  --card-border:      #262626;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
+}
+
+/* ── Reusable component classes ───────────────────────── */
+
+@layer components {
+  .card {
+    background-color: var(--card-bg);
+    border: 0.5px solid var(--card-border);
+    border-radius: 1rem;
+  }
+
+  .input {
+    width: 100%;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--input-text);
+    border-radius: 0.75rem;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+
+  .input::placeholder {
+    color: var(--text-placeholder);
+  }
+
+  .input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  }
+
+  .surface {
+    background-color: var(--surface);
+  }
+
+  .surface-muted {
+    background-color: var(--surface-muted);
+  }
 }

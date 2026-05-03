@@ -23,6 +23,8 @@ export default async function AdminCarsPage() {
       </div>
 
       <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div className="overflow-x-auto">
+          <div className="min-w-[900px]">
         <div className="grid grid-cols-12 gap-4 px-5 py-3 bg-gray-50 border-b border-gray-100 text-xs font-medium text-gray-500 uppercase tracking-wide">
           <div className="col-span-4">Vehicle</div>
           <div className="col-span-2">Category</div>
@@ -43,6 +45,8 @@ export default async function AdminCarsPage() {
           ) : (
             cars.map((car) => <AdminCarRow key={car.id} car={car} />)
           )}
+        </div>
+        </div>
         </div>
       </div>
     </div>
