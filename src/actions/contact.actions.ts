@@ -26,7 +26,7 @@ export async function sendContactEmail(input: ContactInput) {
   try {
     // ── Email to your support inbox ──────────────────────
     await resend.emails.send({
-      from: "City Contact Form <noreply@car-hire-ltd.vercel.app>",
+      from: "City Hire <onboarding@resend.dev>",
       to: "oloochino001@gmail.com",
       replyTo: email,
       subject: `[${subjectLabel}] Message from ${name}`,
@@ -62,8 +62,8 @@ export async function sendContactEmail(input: ContactInput) {
 
     // ── Auto-reply to the sender ──────────────────────────
     await resend.emails.send({
-      from: "City <noreply@car-hire-ltd.vercel.app>",
-      to: email,
+      from: "City Hire <onboarding@resend.dev>",
+      to: "oloochino001@gmail.com",
       subject: "We received your message — City Hire Ltd",
       html: `
         <div style="font-family:sans-serif;max-width:560px;margin:0 auto;">
@@ -79,11 +79,11 @@ export async function sendContactEmail(input: ContactInput) {
               <p style="color:#374151;font-size:14px;line-height:1.7;white-space:pre-wrap;margin:0;">${message}</p>
             </div>
             <p style="color:#6b7280;font-size:13px;line-height:1.7;margin:0;">
-              Need urgent help? Call us on <strong>+254 700 000 000</strong> or 
+              Need urgent help? Call us on <strong>+254 755 112 760</strong> or 
               reply directly to this email.
             </p>
             <div style="margin-top:24px;padding-top:24px;border-top:1px solid #f3f4f6;text-align:center;">
-              <a href="https://yourdomain.com/cars" 
+              <a href="https://city-hire-ltd.vercel.app/cars" 
                 style="background:#4F46E5;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;">
                 Browse our fleet
               </a>
