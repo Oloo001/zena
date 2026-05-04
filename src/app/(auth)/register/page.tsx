@@ -48,7 +48,7 @@ export default function RegisterPage() {
         return;
       }
 
-      toast.success("Welcome to Zena!");
+      toast.success("Welcome to City Hire!");
       router.push("/dashboard/bookings");
     });
   };
@@ -60,7 +60,7 @@ export default function RegisterPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <Link href="/" className="text-2xl font-bold text-indigo-600">
-            Zena
+            City Hire
           </Link>
           <h1 className="text-xl font-bold text-gray-900 mt-4">
             Create your account
