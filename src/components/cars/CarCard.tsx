@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Car } from "@prisma/client";
+import Image from "next/image";
 
 interface Props {
   car: Car;
@@ -20,11 +21,13 @@ export default function CarCard({ car }: Props) {
       <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
         {/* Image */}
         <div className="relative h-48 bg-gray-50 overflow-hidden">
-          <img
+         <Image
             src={car.images[0] ?? "/cars/placeholder.jpg"}
             alt={`${car.brand} ${car.name}`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
+            fill // This replaces the need for width and height props
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Helps Next.js optimize the download size
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+         />
           <span
             className={`absolute top-3 left-3 text-xs font-medium px-2.5 py-1 rounded-full ${
               categoryColors[car.category] ?? "bg-gray-100 text-gray-700"
